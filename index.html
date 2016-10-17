@@ -2,10 +2,12 @@
 <html>
   <head>
     <meta charset="utf-8">
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
+
 
     <style link = "materialize.css materialize.min.css"></style>
      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -14,8 +16,8 @@
   <body>
     <div class="navbar-fixed">
       <nav class="#1565c0 blue darken-3" role="navigation">
-        <div class ="nav-wrapper container">
-          <a class="brand-logo .left-align">
+        <div class ="nav-wrapper">
+          <a class="brand-logo left">
             <h4> Galvanize Delivers</h4> </a>
             <div class="right">
               <ul id="nav-mobile" class="right-align hide-on-med-and-down">
@@ -25,27 +27,49 @@
           </div>
       </nav>
     </div>
-    <img src="img/hero.jpg" class="col s12">
+
+    <div id="index-banner" class="parallax-container">
+      <div class="section no-pad-box">
+        <div class="container">
+          <br><br><br><br>
+          <div class="row center">
+          <h1 class="header center black-text text-lighten-1">Fine Dining, Delivered.</h1>
+              <a class="waves-effect waves-light pink btn">Place an Order</a>
+          </div>
+        </div>
+        <div class="parallax">
+          <img src="img/hero.jpg" style="width: 200px;" alt="Unsplashed background img 1"></div>
+      </div>
+    </div>
+
     <div class = "container">
       <div class="row materialboxed">
         <div class="col s4">
-          <p><span class="pink-text text-lighten-1"><i class="material-icons">shopping_basket</i>Shop Online </p>
-          <p> Using our convenient web app, you'll get all the power of gFood without having to call your order in. Order in your pajamas, order 24 hours a day, order on Christmas, we're here to serve you.</span></p>
+          <h5><span class="pink-text text-lighten-1"><i class="material-icons">shopping_basket</i> Shop Online</span> </h5>
+          <p> Using our convenient web app, you'll get all the power of gFood without having to call your order in. Order in your pajamas, order 24 hours a day, order on Christmas, we're here to serve you.</p>
         </div>
         <div class="col s4">
-          <p> <span class="pink-text text-lighten-1"><i class="material-icons">local_shipping</i>Fast Delivery </p>
-          <p> You've never seen ordering this quick. Our proprietary ordering rocket ship delivery team allows you to spend less time being hungry, and more time doing what matters most to you. We'd ask what that is, but gFood respects your privacy.</span></p></span>
+          <h5> <span class="pink-text text-lighten-1"><i class="material-icons">local_shipping</i> Fast Delivery</span> </h5>
+          <p> You've never seen ordering this quick. Our proprietary ordering rocket ship delivery team allows you to spend less time being hungry, and more time doing what matters most to you. We'd ask what that is, but gFood respects your privacy.</p>
         </div>
         <div class="col s4">
-          <p><span class="pink-text text-lighten-1"> <i class="material-icons">local_atm</i>Great Deals </p>
-          <p> Money: You've got it, we want it. But let it never be said we're not incredibly fair! Burger sales? Check. Pizza sales? Check. Burger and pizza sales?? Check, check, check! We seriously can't stop making deals.</span></p>
+          <h5 class="pinkHeading"><span class="pink-text text-lighten-1"> <i class="material-icons">local_atm</i> Great Deals </span> </h5>
+          <p> Money: You've got it, we want it. But let it never be said we're not incredibly fair! Burger sales? Check. Pizza sales? Check. Burger and pizza sales?? Check, check, check! We seriously can't stop making deals.</p>
         </div>
 
       </div>
     </div>
+    <footer>
+      <div class="container #1565c0 blue darken-3">
+      <div class="col s6">
+
+        <h5> Galvanize Delivers</h5></div>
+      </div>
+    </footer>
 
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script type="text/javascript" src="gDelivers.js">
   </body>
 </html>
