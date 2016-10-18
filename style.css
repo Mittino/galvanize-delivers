@@ -15,5 +15,8 @@ padding-right:15px;
   padding-top: 20px;
 }
 .parallax-container {
-  height: 350px;
+  height: 380px;
+}
+.no-pad-box{
+  width: 100%
 }
