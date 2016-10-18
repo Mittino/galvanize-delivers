@@ -1,1 +1,19 @@
 
+.nav-wrapper{
+padding-left: 15px;
+padding-right:15px;
+}
+.footer-wrapper{
+  height: 100px;
+  padding-top: 20px;
+}
+.copyright{
+  padding: 10px 0;
+}
+
+.iconHeading{
+  padding-top: 20px;
+}
+.parallax-container {
+  height: 350px;
+}

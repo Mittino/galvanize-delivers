@@ -2,20 +2,18 @@
 <html>
   <head>
     <meta charset="utf-8">
-          <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
-
-
-    <style link = "materialize.css materialize.min.css"></style>
      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+     <link rel="stylesheet" href="style.css">
     <title>Galvanize Delivers</title>
   </head>
   <body>
     <div class="navbar-fixed">
-      <nav class="#1565c0 blue darken-3" role="navigation">
+      <nav class="blue darken-3" role="navigation">
         <div class ="nav-wrapper">
           <a class="brand-logo left">
             <h4> Galvanize Delivers</h4> </a>
@@ -30,10 +28,10 @@
 
     <div id="index-banner" class="parallax-container">
       <div class="section no-pad-box">
-        <div class="container">
+        <div class="container valign-wrapper center-align">
           <br><br><br><br>
-          <div class="row center">
-          <h1 class="header center black-text text-lighten-1">Fine Dining, Delivered.</h1>
+          <div class="row center valign">
+          <h1 class="header center white-text text-lighten-1">Fine Dining, Delivered.</h1>
               <a class="waves-effect waves-light pink btn">Place an Order</a>
           </div>
         </div>
@@ -43,45 +41,55 @@
     </div>
 
     <div class = "container">
-      <div class="row materialboxed">
+      <div class="row materialboxed iconHeading">
         <div class="col s4">
-          <h5><span class="pink-text text-lighten-1"><i class="material-icons">shopping_basket</i> Shop Online</span> </h5>
+          <h5 class="valign-wrapper">
+            <i class="material-icons valign pink-text">shopping_basket</i>
+            <span class="pink-text text-lighten-1 valign"> Shop Online</span>
+          </h5>
           <p> Using our convenient web app, you'll get all the power of gFood without having to call your order in. Order in your pajamas, order 24 hours a day, order on Christmas, we're here to serve you.</p>
         </div>
         <div class="col s4">
-          <h5> <span class="pink-text text-lighten-1"><i class="material-icons">local_shipping</i> Fast Delivery</span> </h5>
+          <h5 class="valign-wrapper">
+             <i class="material-icons valign pink-text">local_shipping</i>
+            <span class="pink-text text-lighten-1 valign"> Fast Delivery</span> </h5>
           <p> You've never seen ordering this quick. Our proprietary ordering rocket ship delivery team allows you to spend less time being hungry, and more time doing what matters most to you. We'd ask what that is, but gFood respects your privacy.</p>
         </div>
         <div class="col s4">
-          <h5 class="pinkHeading"><span class="pink-text text-lighten-1"> <i class="material-icons">local_atm</i> Great Deals </span> </h5>
+          <h5 class="pinkHeading valign-wrapper">
+            <i class="material-icons valign pink-text">local_atm</i>
+            <span class="pink-text text-lighten-1 valign">  Great Deals </span> </h5>
           <p> Money: You've got it, we want it. But let it never be said we're not incredibly fair! Burger sales? Check. Pizza sales? Check. Burger and pizza sales?? Check, check, check! We seriously can't stop making deals.</p>
         </div>
 
       </div>
     </div>
     <footer>
-      <div class= "#1565c0 blue darken-3">
+      <div class= "blue darken-3">
         <div class="container row">
+          <div class="valign-wrapper footer-wrapper">
 
-          <div class="col s8">
-            <h5 class ="white-text"> Galvanize Delivers</h5>
-            <p class="white-text"> Fine Dining, Delivered.</p>
-          </div>
-          <div class="col s4">
-            <p class="white-text"> Home</p>
-            <p class="white-text"> Order Deliver</p>
-          </div>
-        </div>
-      <div class="footer-copyright #0d47a1 blue darken-4">
-            <div class="container white-text">
-            © 2016 Galvanize Delivers
+            <div class="col s8 valign">
+              <h5 class ="white-text valign"> Galvanize Delivers</h5>
+              <p class="white-text"> Fine Dining, Delivered.</p>
+            </div>
+            <div class="col s4 valign">
+              <p class="white-text"> Home</p>
+              <p class="white-text"> Order Deliver</p>
             </div>
           </div>
+        </div>
+        <div class="footer-copyright blue darken-4">
+          <div class="container white-text copyright">
+            © 2016 Galvanize Delivers
+          </div>
+        </div>
+      </div>
     </footer>
 
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
-    <script type="text/javascript" src="gDelivers.js">
+    <script type="text/javascript" src="gDelivers.js"></script>
   </body>
 </html>
