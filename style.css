@@ -20,3 +20,6 @@ padding-right:15px;
 .no-pad-box{
   width: 100%
 }
+.grayBackground{
+  background-color: gray;
+}
