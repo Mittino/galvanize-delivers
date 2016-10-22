@@ -37,37 +37,52 @@
     }
   ];
   var orderTotals = {
-    subtotal: 1.55,
-    tax: 1.00,
-    total: 1.00,
+    subtotal: 0,
+    tax: 0,
+    total: 0,
   };
 
   function drawProducts(products){
     var menu = $(".menu");
 
     products.forEach(function(product) {
-      menu.append(
-          '<div class="col s12 m6">'+
-            '<div class="card">'+
-              '<div class="card-image">'+
-                '<img src=' + product.image + '>'+
-                '<div class="card-content">'+
-                  '<p> '+ product.name + '</p>'+
-                  '<p>' + "$" + product.price + '</p>'+
-                '</div>'+
-                '<div class="card-action">'+
-                  '<a href="#" class="pink-text" id="royale">Add to Order</a>'+
-                '</div>'+
-              '</div>'+
+      var $productCard = $('<div class="col s12 m6">'+
+        '<div class="card">'+
+          '<div class="card-image">'+
+            '<img src=' + product.image + '>'+
+            '<div class="card-content">'+
+              '<p> '+ product.name + '</p>'+
+              '<p>' + "$" + product.price + '</p>'+
             '</div>'+
-          '</div>'
-      );
+            '<div class="card-action">'+
+              '<a href="javascript:void(0)" class="pink-text add-to-order">Add to Order</a>'+
+            '</div>'+
+          '</div>'+
+        '</div>'+
+      '</div>');
+
+      $productCard.find('.add-to-order').on('click', function(event) {
+        console.log('Clicked ' + product.name);
+        addToCart(product);
+
+      });
+
+      menu.append($productCard);
     });
+  }
+
+  function addToCart(product){
+    cartItems.push({
+      product: product,
+      quantity: 1,
+    });
+
+    drawCart(cartItems);
   }
 
   function drawCart(cartItems){
     var cart = $(".cartItems");
-
+    cart.html('');
     cartItems.forEach(function(cartItem){
       cart.append(
         '<tr>'+
@@ -108,13 +123,13 @@
     drawOrderTotal(orderTotals);
 
 
-        $('.card-action').click(function(){
-          var target = $(event.target).parents();
-          // if (event.target !== event.currentTarget && event.target===){
-          // target = $(event.target).attr(".cardcontent");
-          // }
-          console.log("clicked", target);
-        });
+        // $('.card-action').click(function(){
+        //   var target = $(event.target).parents();
+        //   // if (event.target !== event.currentTarget && event.target===){
+        //   // target = $(event.target).attr(".cardcontent");
+        //   // }
+        //   console.log("clicked", target);
+        // });
 
 
 
