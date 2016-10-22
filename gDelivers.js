@@ -1,4 +1,5 @@
 "use strict";
+
 (function gDelivers() {
   var products = [
     { id: 1,
@@ -32,12 +33,14 @@
         price: 8.99,
         image: 'img/burger.jpg',
       },
-
       quantity: 1,
-
     }
-
   ];
+  var orderTotals = {
+    subtotal: 1.55,
+    tax: 1.00,
+    total: 1.00,
+  };
 
   function drawProducts(products){
     var menu = $(".menu");
@@ -73,8 +76,27 @@
         '</tr>'
       );
     });
-
   }
+
+  function drawOrderTotal(orderTotals){
+    var totals = $(".orderTotals");
+    var subtotal = orderTotals.subtotal.toFixed(2);
+    var tax = orderTotals.tax.toFixed(2);
+    var total = orderTotals.total.toFixed(2);
+      totals.append(
+        '<tr>' +
+          '<td class="right-align" data-field="subtotal">Subtotal</td>' +
+          '<td class="subtotal"> $' + subtotal + '</td>'+
+        '</tr>' +
+          '<td class="right-align" data-field="tax">Tax</td>' +
+          '<td class="tax"> $' + tax + '</td>' +
+        '<tr>' +
+          '<td class="right-align" data-field="total">Total</td>' +
+          '<td class="tax"> $' + total + '</td>' +
+        '</tr>'
+      );
+    }
+
 
   $(document).ready(function(){
     $('.parallax').parallax();
@@ -83,7 +105,7 @@
 
     drawProducts(products);
     drawCart(cartItems);
-
+    drawOrderTotal(orderTotals);
 
 
         $('.card-action').click(function(){
