@@ -115,11 +115,32 @@
         '</tr>'
       );
     }
+//onclick="Materialize.toast('hi', 4000)"
+    function toastMessage(){
+      var message;
+      console.log(name.input);
+      if (cartItems.length === 0){
+        message = "Please add items to your cart";
+      }
+
+      return(message);
+    }
+
+
+      // if (cartItems === []){
+      //   message = "Please add items to your cart"
+      // }
+      // button.attr('onclick', toast);
+
 
 
   $(document).ready(function(){
     $('.parallax').parallax();
     $(".button-collapse").sideNav();
+    //var $toastContent = $('<span>I am toast content</span>');
+    $("#placeOrderButton").click(function(){
+       Materialize.toast(toastMessage(), 4000);
+    });
 
     drawProducts(products);
     drawCart(cartItems);
