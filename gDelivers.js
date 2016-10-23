@@ -26,15 +26,7 @@
     },
   ];
   var cartItems = [
-    {
-      product: {
-        id: 1,
-        name: "Royale with Cheese",
-        price: 8.99,
-        image: 'img/burger.jpg',
-      },
-      quantity: 1,
-    }
+
   ];
   var orderTotals = {
     subtotal: 0,
@@ -52,7 +44,7 @@
             '<img src=' + product.image + '>'+
             '<div class="card-content">'+
               '<p> '+ product.name + '</p>'+
-              '<p>' + "$" + product.price + '</p>'+
+              '<p>' + formatCurrency(product.price) + '</p>'+
             '</div>'+
             '<div class="card-action">'+
               '<a href="javascript:void(0)" class="pink-text add-to-order">Add to Order</a>'+
@@ -87,27 +79,43 @@
       cart.append(
         '<tr>'+
           '<td>' + cartItem.product.name + '</td>'+
-          '<td>$' + cartItem.product.price + '</td>' +
+          '<td>' + formatCurrency(cartItem.product.price) + '</td>' +
         '</tr>'
       );
     });
+    calculate();
   }
 
-  function drawOrderTotal(orderTotals){
+  function formatCurrency(number) {
+    return '$' + number.toFixed(2);
+  }
+
+  function calculate() {
+    var subtotal = cartItems.reduce(function(accumulator, cartItems){
+      return accumulator + cartItems.product.price * cartItems.quantity;
+    }, 0);
+    var tax = subtotal * 0.0356;
+    var total = subtotal + tax;
+    orderTotals.subtotal = subtotal;
+    orderTotals.tax = tax;
+    orderTotals.total = total;
+    drawOrderTotal();
+  }
+
+
+  function drawOrderTotal() {
     var totals = $(".orderTotals");
-    var subtotal = orderTotals.subtotal.toFixed(2);
-    var tax = orderTotals.tax.toFixed(2);
-    var total = orderTotals.total.toFixed(2);
+    totals.html('');
       totals.append(
         '<tr>' +
           '<td class="right-align" data-field="subtotal">Subtotal</td>' +
-          '<td class="subtotal"> $' + subtotal + '</td>'+
+          '<td class="subtotal">' + formatCurrency(orderTotals.subtotal) + '</td>'+
         '</tr>' +
           '<td class="right-align" data-field="tax">Tax</td>' +
-          '<td class="tax"> $' + tax + '</td>' +
+          '<td class="tax">' + formatCurrency(orderTotals.tax) + '</td>' +
         '<tr>' +
           '<td class="right-align" data-field="total">Total</td>' +
-          '<td class="tax"> $' + total + '</td>' +
+          '<td class="tax">' + formatCurrency(orderTotals.total) + '</td>' +
         '</tr>'
       );
     }
