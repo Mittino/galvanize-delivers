@@ -38,10 +38,10 @@
     var menu = $(".menu");
 
     products.forEach(function(product) {
-      var $productCard = $('<div class="col s12 m6">'+
+      var $productCard = $('<div class="col s12 m12 l6">'+
         '<div class="card">'+
           '<div class="card-image">'+
-            '<img src=' + product.image + '>'+
+            '<img src="' + product.image + '">'+
             '<div class="card-content">'+
               '<p> '+ product.name + '</p>'+
               '<p>' + formatCurrency(product.price) + '</p>'+
@@ -54,11 +54,8 @@
       '</div>');
 
       $productCard.find('.add-to-order').on('click', function(event) {
-        console.log('Clicked ' + product.name);
         addToCart(product);
-
       });
-
       menu.append($productCard);
     });
   }
@@ -68,7 +65,6 @@
       product: product,
       quantity: 1,
     });
-
     drawCart(cartItems);
   }
 
@@ -79,7 +75,7 @@
       cart.append(
         '<tr>'+
           '<td>' + cartItem.product.name + '</td>'+
-          '<td>' + formatCurrency(cartItem.product.price) + '</td>' +
+          '<td class="right-align">' + formatCurrency(cartItem.product.price) + '</td>' +
         '</tr>'
       );
     });
@@ -94,7 +90,7 @@
     var subtotal = cartItems.reduce(function(accumulator, cartItems){
       return accumulator + cartItems.product.price * cartItems.quantity;
     }, 0);
-    var tax = subtotal * 0.0356;
+    var tax = subtotal * 0.08845;
     var total = subtotal + tax;
     orderTotals.subtotal = subtotal;
     orderTotals.tax = tax;
@@ -109,13 +105,13 @@
       totals.append(
         '<tr>' +
           '<td class="right-align" data-field="subtotal">Subtotal</td>' +
-          '<td class="subtotal">' + formatCurrency(orderTotals.subtotal) + '</td>'+
+          '<td class="subtotal right-align">' + formatCurrency(orderTotals.subtotal) + '</td>'+
         '</tr>' +
           '<td class="right-align" data-field="tax">Tax</td>' +
-          '<td class="tax">' + formatCurrency(orderTotals.tax) + '</td>' +
+          '<td class="tax right-align">' + formatCurrency(orderTotals.tax) + '</td>' +
         '<tr>' +
           '<td class="right-align" data-field="total">Total</td>' +
-          '<td class="tax">' + formatCurrency(orderTotals.total) + '</td>' +
+          '<td class="tax right-align">' + formatCurrency(orderTotals.total) + '</td>' +
         '</tr>'
       );
     }
@@ -123,33 +119,11 @@
 
   $(document).ready(function(){
     $('.parallax').parallax();
-
-
+    $(".button-collapse").sideNav();
 
     drawProducts(products);
     drawCart(cartItems);
     drawOrderTotal(orderTotals);
-
-
-        // $('.card-action').click(function(){
-        //   var target = $(event.target).parents();
-        //   // if (event.target !== event.currentTarget && event.target===){
-        //   // target = $(event.target).attr(".cardcontent");
-        //   // }
-        //   console.log("clicked", target);
-        // });
-
-
-
-
-
-
-
-
-
-
-
-
 
 
       });
