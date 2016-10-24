@@ -1,10 +1,9 @@
 
 .nav-wrapper{
-padding-left: 15px;
-padding-right:15px;
+  padding-left: 15px;
 }
 .footer-wrapper{
-  height: 100px;
+  width:100%;
   padding-top: 20px;
 }
 .copyright{
@@ -18,7 +17,8 @@ padding-right:15px;
   height: 380px;
 }
 .no-pad-box{
-  width: 100%
+  width: 100%;
+  margin-top: 0;
 }
 .icon-pink{
   color: #e91e63;

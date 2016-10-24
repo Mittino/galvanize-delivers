@@ -1,6 +1,7 @@
 "use strict";
 
 (function gDelivers() {
+  var hasOrdered = false;
   var products = [
     { id: 1,
       name: "Royale with Cheese",
@@ -43,7 +44,7 @@
           '<div class="card-image">'+
             '<img src="' + product.image + '">'+
             '<div class="card-content">'+
-              '<p> '+ product.name + '</p>'+
+              '<h5> '+ product.name + '</h5>'+
               '<p>' + formatCurrency(product.price) + '</p>'+
             '</div>'+
             '<div class="card-action">'+
@@ -116,31 +117,37 @@
       );
     }
 //onclick="Materialize.toast('hi', 4000)"
-    function toastMessage(){
+    function handleSubmit(){
       var message;
-      console.log(name.input);
-      if (cartItems.length === 0){
-        message = "Please add items to your cart";
+      if (hasOrdered !== true){
+        if (cartItems.length === 0){
+          message = "Please add items to your cart";
+        } else if($('#name').val().length === 0 ){
+          message = "Please add your name";
+        } else if($('#phone').val().length === 0 ){
+          message = "Please add your phone number";
+        } else if($('#address').val().length === 0 ){
+          message = "Please add your address";
+        } else {
+          hasOrdered = true;
+          message = "Thank you for your order";
+        }
+        Materialize.toast(message, 4000);
       }
-
-      return(message);
     }
-
-
-      // if (cartItems === []){
-      //   message = "Please add items to your cart"
-      // }
-      // button.attr('onclick', toast);
-
 
 
   $(document).ready(function(){
     $('.parallax').parallax();
     $(".button-collapse").sideNav();
-    //var $toastContent = $('<span>I am toast content</span>');
-    $("#placeOrderButton").click(function(){
-       Materialize.toast(toastMessage(), 4000);
+    $("#contactInfo").on('submit',function(event){
+      event.preventDefault();
+         handleSubmit();
     });
+
+    // $("#placeOrderButton").click(function(){
+    //    Materialize.toast(toastMessage(), 4000);
+    // });
 
     drawProducts(products);
     drawCart(cartItems);
